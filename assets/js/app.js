@@ -104,7 +104,7 @@ const MEMES = [
    choices:["يا ليل الثوااارررره","يالييل الزقققاققه","يا ليييل الليللل"], answer:1},
   {id:"q11", title:"السؤال ١١", media:"assets/images/q11.png", type:"image",
    full:"assets/videos/q11.mov",
-   choices:["ترد على المذيع برد صار ميم","تبكي على الهواء","تقوم تمشي من المقابلة"], answer:0},
+   choices:["!!!","!!!","!!!"], answer:0},
   {id:"q12", title:"السؤال ١٢", media:"assets/videos/q12.mp4", type:"video",
    full:"assets/videos/q12.mp4", stopAt:3,
    choices:["ززززق","خررررى","ناااااااار"], answer:0},
