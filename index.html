@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لعبة طلال</title>
+<meta name="description" content="لعبة طلال — تحدي فك الشفرات للفعاليات المباشرة">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+
+<div id="bg"></div>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">خمن الميم · تحدي فك الشفرات</div>
+      <h1 class="title">لعبة <span class="glitch">طلال</span></h1>
+      <div class="host-tag"><span class="host-dot"></span> يقدّمها د. طلال</div>
+    </div>
+    <div class="mascot" id="mascot" data-pose="welcome">
+      <img id="mascotImg" alt="د. طلال، مقدّم اللعبة">
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="tabs">
+    <button class="tab active" data-tab="crack"><span class="tnum">اللعبة ٠١</span>فك الشفرة</button>
+    <button class="tab" data-tab="memes"><span class="tnum">اللعبة ٠٢</span>لعبة الميمز</button>
+  </div>
+
+  <!-- GAME 1 -->
+  <section id="tab-crack">
+    <div class="sec-head"><h2>فك الشفرة</h2><span class="rule"></span></div>
+    <div id="challenges"></div>
+  </section>
+
+  <!-- GAME 2 -->
+  <section id="tab-memes" class="hidden">
+    <div class="sec-head"><h2>لعبة الميمز</h2><span class="rule"></span></div>
+    <p class="cat-desc">نوعان من الأسئلة: مقطع يتوقف قبل النهاية — <strong>كمّل الميم</strong>، أو صورة — <strong>إيش الميم؟</strong>. استخدم التلميح لعرض ثلاثة خيارات، ثم اكشف الإجابة لتشغيل المقطع كاملًا.</p>
+    <div id="memes" class="grid"></div>
+  </section>
+</main>
+
+<!-- ADMIN -->
+<button class="admin-fab" id="adminFab" aria-expanded="false" aria-controls="adminPanel">
+  <span class="fab-icon">⚙</span> لوحة المشرف <span class="fab-count" id="fabCount">0</span>
+</button>
+<section class="admin" id="adminPanel" role="dialog" aria-label="لوحة المشرف">
+  <div class="admin-header">
+    <span class="ah-title">لوحة المشرف</span>
+    <button class="ah-close" id="adminClose" aria-label="إغلاق اللوحة">✕</button>
+  </div>
+  <div class="admin-grid">
+    <div class="panel">
+      <h4>إدارة اللاعبين</h4>
+      <div class="add-row">
+        <input type="text" id="playerName" placeholder="اسم اللاعب (مثال: أحمد)" maxlength="22">
+        <button class="btn btn-reveal" id="addPlayer">إضافة لاعب</button>
+      </div>
+      <ul class="players" id="playersList"></ul>
+    </div>
+    <div class="panel">
+      <h4>لوحة النتائج</h4>
+      <div class="scoreboard-list" id="scoreboard"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODALS -->
+<div class="modal-bg" id="hintModal">
+  <div class="modal">
+    <div class="mlabel">تلميح</div>
+    <p class="mhint" id="hintText"></p>
+    <div id="hintChoices" class="choices"></div>
+    <button class="btn btn-close" data-close>فهمت</button>
+  </div>
+</div>
+
+<div class="modal-bg" id="answerModal">
+  <div class="modal">
+    <div class="mlabel">الإجابة الصحيحة</div>
+    <div class="manswer" id="answerText"></div>
+    <div class="msub" id="answerSub"></div>
+    <div id="answerMedia" class="answer-media"></div>
+    <div class="award-zone">
+      <div class="arow">
+        <select id="awardSelect"></select>
+        <button class="btn btn-reveal" id="awardBtn">منح نقطة</button>
+      </div>
+      <button class="btn btn-noanswer" id="noAnswerBtn"> محد جاوب</button>
+    </div>
+    <button class="btn btn-close" data-close>إغلاق</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<footer>لعبة طلال والله</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
